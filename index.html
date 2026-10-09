@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConsórcioMais — Conquiste seu bem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="conteudo barra-navegacao">
+            <a href="#" class="logo">Consórcio<span>Mais</span></a>
+            <nav class="links-navegacao">
+                <a href="#beneficios">Benefícios</a>
+                <a href="#como-funciona">Como funciona</a>
+                <a href="#simulador">Simulador</a>
+                <a href="#depoimentos">Depoimentos</a>
+                <a href="#simulador" class="botao-navegacao">Simular agora</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="banner-principal">
+            <div class="conteudo">
+                <div class="conteudo-banner">
+                    <span class="indicador">ConsórcioMais</span>
+                    <h1>Realize seu sonho <span>sem pagar juros.</span></h1>
+                    <p class="texto-principal">
+                        Planeje hoje, conquiste amanhã. Encontre o consórcio ideal para carro,
+                        imóvel ou serviços, com parcelas que cabem no seu planejamento.
+                    </p>
+                    <div class="acoes-principal">
+                        <a href="#simulador" class="botao botao-primario">Simular agora</a>
+                        <a href="#como-funciona" class="botao">Como funciona</a>
+                    </div>
+                    <div class="avaliacao">
+                        <span class="estrelas">★★★★★</span>
+                        <span>4.9 de +50 mil clientes</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao beneficios" id="beneficios">
+            <div class="conteudo">
+                <div class="cabecalho-secao">
+                    <span class="indicador">Benefícios</span>
+                    <h2>Por que escolher um consórcio?</h2>
+                    <p class="descricao-secao">
+                        Uma alternativa planejada para conquistar seu próximo bem sem comprometer seu orçamento.
+                    </p>
+                </div>
+
+                <div class="grade-beneficios">
+                    <article class="cartao-beneficio">
+                        <div class="icone">01</div>
+                        <h3>Sem juros</h3>
+                        <p>Você não paga juros como em um financiamento. O plano possui uma taxa de administração transparente.</p>
+                    </article>
+
+                    <article class="cartao-beneficio">
+                        <div class="icone">02</div>
+                        <h3>Parcela flexível</h3>
+                        <p>Escolha um plano compatível com seu orçamento e tenha previsibilidade para organizar sua vida financeira.</p>
+                    </article>
+
+                    <article class="cartao-beneficio">
+                        <div class="icone">03</div>
+                        <h3>Crédito garantido</h3>
+                        <p>Sua carta de crédito pode ser liberada por sorteio ou lance conforme as regras do grupo.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao secao-como-funciona" id="como-funciona">
+            <div class="conteudo">
+                <div class="cabecalho-secao">
+                    <span class="indicador">Como funciona</span>
+                    <h2>Um caminho simples até o seu objetivo.</h2>
+                    <p class="descricao-secao">
+                        Escolha seu plano, participe do grupo e acompanhe sua jornada até a contemplação.
+                    </p>
+                </div>
+
+                <div class="etapas">
+                    <article class="etapa">
+                        <div class="numero-etapa">1</div>
+                        <h3>Escolha o plano ideal</h3>
+                        <p>Defina o valor da carta de crédito e encontre uma condição adequada ao seu orçamento.</p>
+                    </article>
+
+                    <article class="etapa">
+                        <div class="numero-etapa">2</div>
+                        <h3>Participe do grupo</h3>
+                        <p>Após a contratação, você participa do grupo e realiza o pagamento das parcelas mensais.</p>
+                    </article>
+
+                    <article class="etapa">
+                        <div class="numero-etapa">3</div>
+                        <h3>Receba sua carta</h3>
+                        <p>A contemplação acontece por sorteio ou lance, conforme as regras estabelecidas para o grupo.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao secao-simulador" id="simulador">
+            <div class="conteudo">
+                <div class="bloco-simulador">
+                    <div class="informacoes-simulador">
+                        <span class="indicador">Simulador</span>
+                        <h2>Simule sua carta de crédito.</h2>
+                        <p>Informe quanto você pretende investir e o prazo desejado para encontrar o plano mais adequado ao seu objetivo.</p>
+                        <p>A simulação é gratuita e sem compromisso.</p>
+                    </div>
+
+                    <form class="formulario-simulador" action="#" method="post">
+                        <div class="grupo-formulario">
+                            <label for="valor-desejado">Valor desejado</label>
+                            <input type="number" id="valor-desejado" name="valor" placeholder="R$ 80.000" min="1" required>
+                        </div>
+
+                        <div class="grupo-formulario">
+                            <label for="prazo-desejado">Prazo (meses)</label>
+                            <select id="prazo-desejado" name="prazo" required>
+                                <option value="">Selecione o prazo</option>
+                                <option value="60">60 meses</option>
+                                <option value="72">72 meses</option>
+                                <option value="84">84 meses</option>
+                                <option value="100">100 meses</option>
+                                <option value="120">120 meses</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="botao botao-primario">Ver minha parcela</button>
+                        <p class="nota-formulario">Simulação inicial. Valores finais dependem das condições do plano escolhido.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+         cd /workspaces
+zip -r LandingPage2.zip LandingPage2 -x "*/.git/*" 
+
+        <form class="formulario-leads" id="formulario-leads">
+            <h3>Deixe seus dados e entraremos em contato</h3>
+
+            <div class="grupo-formulario">
+                <label for="nome">Nome completo *</label>
+                <input id="nome" name="nome" required>
+            </div>
+
+            <div class="grupo-formulario">
+                <label for="whatsapp">WhatsApp *</label>
+                <input id="whatsapp" name="whatsapp" type="tel" required>
+            </div>
+
+            <div class="grupo-formulario">
+                <label for="email">E-mail *</label>
+                <input id="email" name="email" type="email" required>
+            </div>
+
+            <div class="grupo-formulario">
+                <label for="cidade">Cidade *</label>
+                <input id="cidade" name="cidade" required>
+            </div>
+
+            <div class="grupo-formulario">
+                <label for="profissao">Profissão *</label>
+                <input id="profissao" name="profissao" required>
+            </div>
+
+            <div class="grupo-formulario">
+                <label for="renda">Renda mensal (R$) *</label>
+                <input id="renda" name="renda" type="number" min="0" step="0.01" required>
+            </div>
+
+            <div class="grupo-formulario">
+                <label for="tipo">Tipo de consórcio *</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="">Selecione</option>
+                    <option value="Imóvel">Imóvel</option>
+                    <option value="Veículo">Veículo</option>
+                    <option value="Serviços">Serviços</option>
+                    <option value="Outro">Outro</option>
+                </select>
+            </div>
+
+            <div class="grupo-formulario">
+                <label for="valor-carta">Valor da carta (R$) *</label>
+                <input id="valor-carta" name="valor" type="number" min="1" step="0.01" required>
+            </div>
+
+            <div class="grupo-formulario">
+                <label for="parcela-desejada">Parcela desejada (R$) *</label>
+                <input id="parcela-desejada" name="parcela" type="number" min="0" step="0.01" required>
+            </div>
+
+            <div class="grupo-formulario">
+                <label for="lance-disponivel">Lance disponível (R$) *</label>
+                <input id="lance-disponivel" name="lance" type="number" min="0" step="0.01" required>
+            </div>
+
+            <div class="grupo-formulario">
+                <label for="prazo-compra">Quando pretende comprar? *</label>
+                <select id="prazo-compra" name="prazoCompra" required>
+                    <option value="">Selecione</option>
+                    <option value="Imediatamente">Imediatamente</option>
+                    <option value="3 meses">Até 3 meses</option>
+                    <option value="6 meses">Até 6 meses</option>
+                    <option value="12 meses">Até 12 meses</option>
+                    <option value="Mais de 12 meses">Mais de 12 meses</option>
+                </select>
+            </div>
+
+            <div class="grupo-formulario">
+                <label for="objetivo">Objetivo *</label>
+                <input id="objetivo" name="objetivo" placeholder="Ex.: Comprar minha casa" required>
+            </div>
+
+            <div class="grupo-formulario">
+                <label for="melhor-horario">Melhor horário *</label>
+                <select id="melhor-horario" name="horario" required>
+                    <option value="">Selecione</option>
+                    <option value="Manhã">Manhã</option>
+                    <option value="Tarde">Tarde</option>
+                    <option value="Noite">Noite</option>
+                    <option value="Qualquer horário">Qualquer horário</option>
+                </select>
+            </div>
+
+            <div class="grupo-formulario">
+                <label for="forma-contato">Forma de contato *</label>
+                <select id="forma-contato" name="forma" required>
+                    <option value="WhatsApp">WhatsApp</option>
+                    <option value="Ligação">Ligação</option>
+                    <option value="E-mail">E-mail</option>
+                </select>
+            </div>
+
+            <div class="grupo-formulario">
+                <label for="observacoes">Observações</label>
+                <textarea id="observacoes" name="obs" placeholder="Conte mais sobre seu objetivo"></textarea>
+            </div>
+
+            <div class="grupo-formulario">
+                <label>
+                    <input type="checkbox" name="consentimentoContato" required style="width:auto;height:auto">
+                    Autorizo o contato sobre minha solicitação.
+                </label>
+            </div>
+
+            <div class="grupo-formulario">
+                <label>
+                    <input type="checkbox" name="aceitouPoliticaPrivacidade" required style="width:auto;height:auto">
+                    Li e aceito a Política de Privacidade.
+                </label>
+            </div>
+
+            <button type="submit" class="botao botao-primario" id="botao-enviar">Enviar minha simulação</button>
+            <p id="status-envio" class="nota-formulario" role="status" aria-live="polite"></p>
+        </form>
+
+        <section class="secao depoimentos" id="depoimentos">
+            <div class="conteudo">
+                <div class="cabecalho-secao">
+                    <span class="indicador">Prova social</span>
+                    <h2>Quem planejou, conquistou.</h2>
+                    <p class="descricao-secao">
+                        Experiências de clientes que escolheram o consórcio para realizar seus objetivos.
+                    </p>
+                </div>
+
+                <div class="grade-depoimentos">
+                    <article class="depoimento">
+                        <div class="estrelas-depoimento">★★★★★</div>
+                        <p>“Consegui meu carro em menos de um ano.”</p>
+                        <strong>— Beatriz S.</strong>
+                    </article>
+
+                    <article class="depoimento">
+                        <div class="estrelas-depoimento">★★★★★</div>
+                        <p>“Processo transparente do início ao fim.”</p>
+                        <strong>— Carlos M.</strong>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="chamada-final">
+            <div class="conteudo">
+                <div class="conteudo-chamada-final">
+                    <span class="indicador">ConsórcioMais</span>
+                    <h2>Pronto para conquistar o seu bem?</h2>
+                    <p>Faça uma simulação gratuita e sem compromisso em 2 minutos.</p>
+                    <a href="#simulador" class="botao botao-primario">Simular meu consórcio</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="conteudo">
+            <div class="conteudo-rodape">
+                <div class="logo-rodape">Consórcio<span>Mais</span></div>
+                <nav class="links-rodape">
+                    <a href="#beneficios">Produtos</a>
+                    <a href="#como-funciona">Empresa</a>
+                    <a href="#depoimentos">Contato</a>
+                    <a href="#simulador">Simular</a>
+                </nav>
+            </div>
+            <p class="direitos-autorais">© 2026 ConsórcioMais. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="./js/script.js" defer></script>
+</body>
+</html>

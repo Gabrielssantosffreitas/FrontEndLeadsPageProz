@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Painel de leads | ConsórcioMais</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/adm.css">
+</head>
+<body>
+  <header class="barra-superior">
+    <div class="conteudo-barra-superior">
+      <a class="marca" href="./index.html">Consórcio<span>Mais</span></a>
+      <span class="rotulo-admin">Painel administrativo</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="cabecalho-pagina" aria-labelledby="titulo-pagina">
+      <div>
+        <p class="indicador">Atendimento</p>
+        <h1 id="titulo-pagina">Leads recebidos</h1>
+        <p class="subtitulo">Consulte e pesquise as solicitações enviadas pelo formulário.</p>
+      </div>
+      <button class="botao-atualizar" id="botao-atualizar" type="button">Atualizar lista</button>
+    </section>
+
+    <section aria-label="Lista de leads">
+      <div class="barra-ferramentas">
+        <input class="busca" id="busca" type="search" placeholder="Buscar por nome, cidade, WhatsApp..." aria-label="Buscar leads" autocomplete="off">
+        <span class="contador-leads" id="contador-leads" aria-live="polite"></span>
+      </div>
+      <p class="status" id="status" role="status" aria-live="polite">Carregando leads...</p>
+      <div class="painel-tabela">
+        <div class="rolagem-tabela">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">WhatsApp</th>
+                <th scope="col">Cidade</th>
+                <th scope="col">Interesse</th>
+                <th scope="col">Crédito</th>
+                <th scope="col">Prazo de compra</th>
+                <th scope="col"><span class="visualmente-oculto">Detalhes</span></th>
+              </tr>
+            </thead>
+            <tbody id="corpo-leads"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./js/adm.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,678 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    color: #132A45;
+    background: #F7F9FB;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color .2s ease, transform .2s ease, opacity .2s ease;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease, background .2s ease;
+}
+
+button,
+a {
+    cursor: pointer;
+}
+
+button:active,
+a:active {
+    transform: translateY(1px) scale(.99);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(201, 147, 47, .18);
+}
+
+.formulario-simulador,
+.formulario-leads {
+    min-width: 0;
+}
+
+.formulario-simulador textarea,
+.formulario-leads textarea {
+    width: 100%;
+    min-height: 90px;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font: inherit;
+}
+
+.formulario-simulador input[type="checkbox"],
+.formulario-leads input[type="checkbox"] {
+    accent-color: var(--gold);
+}
+
+.formulario-simulador button:disabled,
+.formulario-leads button:disabled {
+    opacity: .65;
+    cursor: wait;
+}
+
+:root {
+    --navy: #132A45;
+    --navy-dark: #0D2035;
+    --gold: #C9932F;
+    --gold-dark: #A97920;
+    --ice: #E5EEF4;
+    --off-white: #F7F9FB;
+    --white: #FFFFFF;
+    --text: #26384B;
+    --muted: #718096;
+    --border: #DCE5EC;
+}
+
+.conteudo {
+    width: min(1120px, 90%);
+    margin: 0 auto;
+}
+
+.secao {
+    padding: 90px 0;
+}
+
+.cabecalho-secao {
+    max-width: 680px;
+    margin-bottom: 50px;
+}
+
+.indicador {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Lora", Georgia, serif;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: clamp(30px, 4vw, 44px);
+    margin-bottom: 15px;
+}
+
+.descricao-secao {
+    color: var(--muted);
+    font-size: 16px;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.barra-navegacao {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: var(--white);
+    font-family: "Lora", Georgia, serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.links-navegacao {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    color: #E9EEF3;
+    font-size: 14px;
+}
+
+.links-navegacao a {
+    transition: color .2s ease;
+}
+
+.links-navegacao a:hover {
+    color: var(--gold);
+}
+
+.botao-navegacao {
+    padding: 11px 20px;
+    border-radius: 5px;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 700;
+}
+
+.banner-principal {
+    position: relative;
+    overflow: hidden;
+    min-height: 700px;
+    padding: 150px 0 100px;
+    display: flex;
+    align-items: center;
+    background: var(--navy);
+    color: var(--white);
+}
+
+.banner-principal::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    right: -130px;
+    top: -170px;
+    border-radius: 50%;
+    background: var(--navy-dark);
+}
+
+.banner-principal::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    right: -110px;
+    bottom: -160px;
+    border-radius: 50%;
+    background: var(--navy-dark);
+}
+
+.conteudo-banner {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+}
+
+.banner-principal h1 {
+    font-size: clamp(42px, 6vw, 68px);
+    margin-bottom: 20px;
+}
+
+.banner-principal h1 span {
+    color: var(--gold);
+}
+
+.texto-principal {
+    max-width: 560px;
+    margin-bottom: 32px;
+    color: #CBD7E2;
+    font-size: 17px;
+}
+
+.acoes-principal {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.botao {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 48px;
+    padding: 0 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: transform .2s ease, background .2s ease;
+}
+
+.botao:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 18px rgba(19, 42, 69, .12);
+}
+
+.botao-primario {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+.botao-primario:hover {
+    background: #D5A13B;
+}
+
+.botao-escuro {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.avaliacao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    color: #D9E2EA;
+    font-size: 13px;
+}
+
+.estrelas {
+    color: var(--gold);
+    letter-spacing: 2px;
+}
+
+.beneficios {
+    background: var(--white);
+}
+
+.grade-beneficios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.cartao-beneficio {
+    padding: 32px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.cartao-beneficio:hover,
+.depoimento:hover,
+.etapa:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(19, 42, 69, .08);
+}
+
+.icone {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 700;
+}
+
+.cartao-beneficio h3 {
+    margin-bottom: 10px;
+    font-size: 21px;
+}
+
+.cartao-beneficio p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.secao-como-funciona {
+    background: var(--ice);
+}
+
+.etapas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.etapa {
+    position: relative;
+    padding: 30px;
+    background: var(--white);
+    border: 1px solid var(--border);
+}
+
+.numero-etapa {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--white);
+    font-weight: 700;
+}
+
+.etapa h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.etapa p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.secao-simulador {
+    background: var(--white);
+}
+
+.bloco-simulador {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 50px;
+    background: var(--ice);
+}
+
+.informacoes-simulador h2 {
+    margin-bottom: 20px;
+}
+
+.informacoes-simulador p {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.formulario-simulador {
+    padding: 30px;
+    background: var(--white);
+    box-shadow: 0 15px 35px rgba(19, 42, 69, .08);
+}
+
+.formulario-leads {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 32px 38px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(245,249,252,0.96));
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(19, 42, 69, .06);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 18px 24px;
+}
+
+.formulario-leads h3 {
+    grid-column: 1 / -1;
+    margin-bottom: 8px;
+    color: var(--navy);
+    font-size: clamp(24px, 3vw, 34px);
+}
+
+.formulario-leads .grupo-formulario {
+    margin-bottom: 0;
+}
+
+.formulario-leads .grupo-formulario:last-of-type,
+.formulario-leads .grupo-formulario:nth-last-child(2),
+.formulario-leads .grupo-formulario:nth-last-child(3),
+.formulario-leads .grupo-formulario:nth-last-child(4) {
+    grid-column: 1 / -1;
+}
+
+.formulario-leads .botao {
+    grid-column: 1 / -1;
+    margin-top: 8px;
+}
+
+.grupo-formulario {
+    margin-bottom: 20px;
+}
+
+.grupo-formulario label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.grupo-formulario input,
+.grupo-formulario select {
+    width: 100%;
+    height: 48px;
+    padding: 0 14px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    outline: none;
+    color: var(--text);
+    background: var(--white);
+}
+
+.grupo-formulario input:focus,
+.grupo-formulario select:focus {
+    border-color: var(--gold);
+}
+
+.formulario-simulador .botao {
+    width: 100%;
+}
+
+.formulario-leads .botao {
+    width: 100%;
+    margin-top: 6px;
+}
+
+.nota-formulario,
+#status-envio {
+    min-height: 22px;
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 11px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+#status-envio.sucesso {
+    color: #176534;
+    font-weight: 600;
+}
+
+#status-envio.erro {
+    color: #A32121;
+    font-weight: 600;
+}
+
+.depoimentos {
+    background: var(--off-white);
+}
+
+.grade-depoimentos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.depoimento {
+    padding: 35px;
+    background: var(--white);
+    border: 1px solid var(--border);
+}
+
+.estrelas-depoimento {
+    margin-bottom: 20px;
+    color: var(--gold);
+    letter-spacing: 3px;
+}
+
+.depoimento p {
+    margin-bottom: 20px;
+    color: var(--text);
+    font-family: "Lora", Georgia, serif;
+    font-size: 18px;
+}
+
+.depoimento strong {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.chamada-final {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+    background: var(--navy);
+    color: var(--white);
+    text-align: center;
+}
+
+.chamada-final::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    left: -220px;
+    bottom: -250px;
+    border-radius: 50%;
+    background: var(--navy-dark);
+}
+
+.conteudo-chamada-final {
+    position: relative;
+    z-index: 2;
+}
+
+.chamada-final h2 {
+    max-width: 700px;
+    margin: 0 auto 15px;
+    font-size: clamp(32px, 5vw, 50px);
+}
+
+.chamada-final p {
+    max-width: 580px;
+    margin: 0 auto 30px;
+    color: #CBD7E2;
+}
+
+.rodape {
+    padding: 35px 0;
+    background: var(--navy-dark);
+    color: #B8C6D3;
+}
+
+.conteudo-rodape {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo-rodape {
+    color: var(--white);
+    font-family: "Lora", Georgia, serif;
+    font-weight: 700;
+}
+
+.logo-rodape span {
+    color: var(--gold);
+}
+
+.links-rodape {
+    display: flex;
+    gap: 25px;
+    font-size: 13px;
+}
+
+.links-rodape a:hover {
+    color: var(--gold);
+}
+
+.direitos-autorais {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,.1);
+    color: #718096;
+    font-size: 11px;
+}
+
+@media (max-width: 850px) {
+    .links-navegacao {
+        display: none;
+    }
+
+    .banner-principal {
+        min-height: auto;
+        padding: 130px 0 80px;
+    }
+
+    .grade-beneficios,
+    .etapas {
+        grid-template-columns: 1fr;
+    }
+
+    .bloco-simulador {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
+
+    .grade-depoimentos {
+        grid-template-columns: 1fr;
+    }
+
+    .conteudo-rodape {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .links-rodape {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 500px) {
+    .secao {
+        padding: 65px 0;
+    }
+
+    .banner-principal h1 {
+        font-size: 40px;
+    }
+
+    .texto-principal {
+        font-size: 15px;
+    }
+
+    .acoes-principal {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .acoes-principal .botao {
+        width: 100%;
+    }
+
+    .cartao-beneficio,
+    .etapa,
+    .depoimento {
+        padding: 25px;
+    }
+
+    .bloco-simulador {
+        padding: 20px;
+    }
+
+    .formulario-simulador {
+        padding: 22px;
+    }
+}
