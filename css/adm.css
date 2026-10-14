@@ -134,6 +134,16 @@ h1 {
   margin-bottom: 14px;
 }
 
+.resumo-leads {
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  border-left: 3px solid var(--gold);
+  background: var(--white);
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 600;
+}
+
 .busca {
   width: min(420px, 100%);
   min-height: 44px;

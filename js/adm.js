@@ -1,5 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const urlApi = "https://apiprojetoproz-4.onrender.com/api/leads";
+  const urlApi = "https://apiprojetoproz-10.onrender.com/api/leads";
+  const urlResumo = "https://apiprojetoproz-10.onrender.com/api/leads/resumo";
+  const usuario = window.prompt("Digite o usuário do painel administrativo:");
+  if (usuario !== "adm") {
+    window.alert("Usuário ou senha incorretos.");
+    return;
+  }
+
+  const senha = window.prompt("Digite a senha do painel administrativo:");
+  if (senha !== "adm") {
+    window.alert("Usuário ou senha incorretos.");
+    return;
+  }
+
+  document.querySelector("#conteudo-admin").hidden = false;
+
   const campos = [
     ["nome", "Nome"],
     ["whatsapp", "WhatsApp"],
@@ -26,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const corpoTabela = document.querySelector("#corpo-leads");
   const campoBusca = document.querySelector("#busca");
   const botaoAtualizar = document.querySelector("#botao-atualizar");
+  const elementoResumo = document.querySelector("#resumo-leads");
 
   let leads = [];
 
@@ -206,7 +222,35 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  async function carregarResumo() {
+    elementoResumo.textContent = "Carregando resumo...";
+
+    try {
+      const resposta = await fetch(urlResumo, {
+        headers: { Accept: "application/json" }
+      });
+
+      if (!resposta.ok) {
+        throw new Error(`Erro HTTP ${resposta.status}`);
+      }
+
+      const resultado = await resposta.json();
+      if (!resultado || typeof resultado.resumo !== "string") {
+        throw new Error("Formato inesperado na resposta do resumo.");
+      }
+
+      elementoResumo.textContent = resultado.resumo;
+    } catch (erro) {
+      console.error("Não foi possível carregar o resumo dos leads:", erro);
+      elementoResumo.textContent = "Não foi possível carregar o resumo dos leads.";
+    }
+  }
+
   campoBusca.addEventListener("input", renderizarLeads);
-  botaoAtualizar.addEventListener("click", carregarLeads);
+  botaoAtualizar.addEventListener("click", () => {
+    carregarLeads();
+    carregarResumo();
+  });
   carregarLeads();
+  carregarResumo();
 });

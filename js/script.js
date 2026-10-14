@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     statusEnvio.style.color = "";
 
     try {
-      const resposta = await fetch("https://apiprojetoproz-4.onrender.com/api/leads", {
+      const resposta = await fetch("https://apiprojetoproz-10.onrender.com/api/leads", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

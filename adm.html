@@ -18,7 +18,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="conteudo-admin" hidden>
     <section class="cabecalho-pagina" aria-labelledby="titulo-pagina">
       <div>
         <p class="indicador">Atendimento</p>
@@ -29,6 +29,7 @@
     </section>
 
     <section aria-label="Lista de leads">
+      <p class="resumo-leads" id="resumo-leads" aria-live="polite">Carregando resumo...</p>
       <div class="barra-ferramentas">
         <input class="busca" id="busca" type="search" placeholder="Buscar por nome, cidade, WhatsApp..." aria-label="Buscar leads" autocomplete="off">
         <span class="contador-leads" id="contador-leads" aria-live="polite"></span>
